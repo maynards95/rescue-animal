@@ -25,11 +25,11 @@ public class Driver
             //switch case for our userInput variable
             switch (userInput) {
                 //if userInput is 1, call the intakeNewDog method and pass scanner
-                case "1" -> intakeNewDog(scanner);
+                case "1"-> intakeNewDog(scanner);
                 //if userInput is 2, call intakeNewMonkey method and pass scanner
                 case "2" -> intakeNewMonkey(scanner);
                 //if userInput is 3, call reserveAnimal method and pass scanner
-                case "3" -> reserveAnimal(scanner);
+                case "3"-> reserveAnimal(scanner);
                 //calls printAnimals and passed userInput (4,5, or 6) to determine which animals to print
                 case "4", "5", "6" -> printAnimals(userInput);
                 //if userInput is q, we exit the loop and print a message to let the user know we are done.
@@ -61,10 +61,10 @@ public class Driver
         System.out.println("Enter a menu selection");
     }
 
-
+    //method to intake a new dog
     public static void intakeNewDog(Scanner scanner) {
         //Creates a dog object to hold our user input
-        Dog newdog = new Dog();
+        Dog newDog = new Dog();
 
         //Goes to next line to catch user input
         scanner.nextLine();
@@ -84,255 +84,362 @@ public class Driver
             }
         }
         //Sets the dog name for our dog object
-        newdog.setName(name); 
-        //prompts user for input
+        newDog.setName(name); 
+        //prompts user for dogs breed
         System.out.println("What is the dog's breed?"); 
         //next line of input is stored in breed variable
         String breed = scanner.nextLine();
         //sets the dog breed for our dog object
-        newdog.setBreed(breed); 
-        //prompts user for input
+        newDog.setBreed(breed); 
+        //prompts user for dogs gender
         System.out.println("What is the dog's gender?"); 
         //next line of input is stored in gender variable
         String gender = scanner.nextLine();
         //sets the dog gender for our dog object
-        newdog.setGender(gender); 
-
-        System.out.println("What is the dog's age?"); //prompts user for input
+        newDog.setGender(gender); 
+        //prompts user for dogs age    
+        System.out.println("What is the dog's age?"); 
+        //next line of input is stored in the age variable
         String age = scanner.nextLine();
-        newdog.setAge(age); //sets the dog objects age
-
-        System.out.println("What is the dog's weight"); //prompts user for input
+        //sets the dogs age for our dog object
+        newDog.setAge(age); 
+        //prompts user for dogs weight
+        System.out.println("What is the dog's weight"); 
+        //next line of input is stored in the weight variable
         String weight = scanner.nextLine();
-        newdog.setWeight(weight); //sets the dog objects weight
-
-        System.out.println("What is the dog's acquisition date?"); //prompts user for input
+        //sets the dogs weight for our dog object
+        newDog.setWeight(weight);
+        //prompts user for acquisition date
+        System.out.println("What is the dog's acquisition date?"); 
+        //next line of input is stored in the acquisitionDate variable
         String acquisitionDate = scanner.nextLine();
-        newdog.setAcquisitionDate(acquisitionDate); //sets the acquisition date for the dog object
-
-        System.out.println("What is the dog's acquisition country?"); //prompts user for input
+        //sets the dogs acquisitionDate for our dog object
+        newDog.setAcquisitionDate(acquisitionDate); 
+        //prompts user for acquisition country
+        System.out.println("What is the dog's acquisition country?"); 
+        //next line of input is stored in the acquisitionCountry variable
         String acquisitionCountry = scanner.nextLine();
-        newdog.setAcquisitionLocation(acquisitionCountry); //sets the acquisition country for the dog object
-
-        System.out.println("What is the dog's training status?"); //prompts user for input
+        //sets the acquisitionLocation for our dog object
+        newDog.setAcquisitionLocation(acquisitionCountry); 
+        //prompts user for dogs training status
+        System.out.println("What is the dog's training status?"); 
+        //next line of input is stored in the trainingStatus variable
         String trainingStatus = scanner.nextLine();
-        newdog.setTrainingStatus(trainingStatus); //sets the training status for the dog object
-
-        System.out.println("True or false: The dog is reserved already."); //prompts user for input
+        //sets the trainingStatus for the dog object
+        newDog.setTrainingStatus(trainingStatus); 
+        //prompts user to answer true or false if the dog is reserved
+        System.out.println("True or false: The dog is reserved already."); 
+        //next boolean is stored in the reserved variable
         boolean reserved = scanner.nextBoolean();
-        newdog.setReserved(reserved); //sets the boolean for newdog reserved
+        //sets the reserved status for our dog object
+        newDog.setReserved(reserved); 
+        //clears next line to receive next input
         scanner.nextLine();
-
-        System.out.println("What is the dog's in service country?"); //prompts user for input
+        //prompts user for dogs service country
+        System.out.println("What is the dog's in service country?"); 
+        //next line of input is stored in the inServiceCountry variable
         String inServiceCountry = scanner.nextLine();
-        newdog.setInServiceCountry(inServiceCountry);
-        newdog.setAnimalType("dog"); //sets animaltype to dog
-
+        //sets the inServiceCountry for our dog object
+        newDog.setInServiceCountry(inServiceCountry);
+        //sets animaltype to dog
+        newDog.setAnimalType("dog"); 
         // adds our newly created "newdog" object to dog array
-        dogList.add(newdog);
-
+        dogList.add(newDog);
         // adds newdog to animalList for sorting in printanimal()
-        animalList.add(newdog);
-
-        System.out.print("A new dog has been added to dog list."); // lets user know a dog has been added to the list
+        animalList.add(newDog);
+        //prints message to let user known we successfully added dog object to our arraylist
+        System.out.print("A new dog has been added to dog list."); 
+        return;
     }
 
 
-    // prompts user for each attribute for the monkey and stores it using mutator methods we set in Monkey.java
+    //method for the intake of a new monkey
     public static void intakeNewMonkey(Scanner scanner) {
-        Monkey newmonkey= new Monkey(); //creating new monkey object
+        //Creates a dog object to hold our user input
+        Monkey newMonkey= new Monkey(); 
+        //Goes to next line to catch user input
         scanner.nextLine();
+        //prompts user for monkeys name
+        System.out.println("What is the monkey's name?"); 
+        //next line of input is stored in the name variable 
+        String name = scanner.nextLine(); 
 
-        System.out.println("What is the monkey's name?"); //prompts user for input
-        String name = scanner.nextLine(); //sets monkeys name
+        //loop to check if monkeys name is already in our monkey arraylist
         for(Monkey monkey: monkeyList) {
+            //checks if the monkeys name is already in our monkey arraylist
             if (monkey.getName().equalsIgnoreCase(name)) {
+                //if the monkeys name is already in our arraylist let the user know
                 System.out.println("\n\nThis monkey is already in our system\n\n");
-                return; //returns to menu
+                //returns back to main menu
+                return; 
             }
         }
-        newmonkey.setName(name);
-
-        System.out.println("What is the monkey's species?"); //prompts user for input
+        //sets the name for our monkey object
+        newMonkey.setName(name);
+        //prompts user for monkeys species
+        System.out.println("What is the monkey's species?");
+        //next line if input will be stored in the species variable
         String species = scanner.nextLine();
 
-        // if and else loop for input validation so we ensure only the species on monkey we want are inputted, otherwise it returns to menu and prints an error
+        // if and else loop for input validation so we ensure only the species on monkey we want are inputted,
+        // otherwise it returns to menu and prints an error
         if (species.equalsIgnoreCase("Capuchin")) {
-            newmonkey.setSpecies(species);
+            //sets species for our monkey object
+            newMonkey.setSpecies(species);
+            //lets user know species has been accepted
             System.out.println("Species set");
         }
         else if (species.equalsIgnoreCase("Guenon")) {
-            newmonkey.setSpecies(species);
-            System.out.println("Species set"); // sets monkeys species
+            //sets species for our monkey object
+            newMonkey.setSpecies(species);
+            //lets user know species has been accepted
+            System.out.println("Species set"); 
         }
         else if (species.equalsIgnoreCase("Macaque")) {
-            newmonkey.setSpecies(species);
+            //sets species for our monkey object
+            newMonkey.setSpecies(species);
+            //lets user know species has been accepted
             System.out.println("Species set");
         }
         else if (species.equalsIgnoreCase("Marmoset")) {
-            newmonkey.setSpecies(species);
+            //sets species for our monkey object
+            newMonkey.setSpecies(species);
+            //lets user know species has been accepted
             System.out.println("Species set");
         }
         else if (species.equalsIgnoreCase("Squirrel monkey")) {
-            newmonkey.setSpecies(species);
+            //sets species for our monkey object
+            newMonkey.setSpecies(species);
+            //lets user know species has been accepted
             System.out.println("Species set");
         }
         else if (species.equalsIgnoreCase("Tamarin")) {
-            newmonkey.setSpecies(species);
+            //sets species for our monkey object
+            newMonkey.setSpecies(species);
+            //lets user know species has been accepted
             System.out.println("Species set");
         }
         else {
-            System.out.println("ERROR SPECIES NOT ALLOWED"); //error message if the species is not in our allowed list
-            return; // returns to menu
+            //error message if the species is not in our allowed list
+            System.out.println("ERROR SPECIES NOT ALLOWED"); 
+            // returns to main menu
+            return; 
             }
 
-        System.out.println("What is the monkey's gender?"); //prompts user for input
+        //prompts user for monkeys gender
+        System.out.println("What is the monkey's gender?"); 
+        //next line of input is stored in the gender variable
         String gender = scanner.nextLine();
-        newmonkey.setGender(gender); //sets monkeys gender
-
-        System.out.println("What is the monkey's age?"); //prompts user for input
+        //sets the gender for our monkey object
+        newMonkey.setGender(gender); 
+        //prompts user for monkeys age
+        System.out.println("What is the monkey's age?"); 
+        //next line of input is stored in the age variable
         String age = scanner.nextLine();
-        newmonkey.setAge(age); //sets monkeys age
-
-        System.out.println("What is the monkey's weight"); //prompts user for input
+        //sets the age for our monkey object
+        newMonkey.setAge(age);
+        //prompts user for monkeys weight
+        System.out.println("What is the monkey's weight"); 
+        //next line of input will be stored in the weight variable
         String weight = scanner.nextLine();
-        newmonkey.setWeight(weight); //sets monkeys weight
-
-        System.out.println("What is the monkey's acquisition date?"); //prompts user for input
+        //sets the weight for our monkey object
+        newMonkey.setWeight(weight); 
+        //prompts user for monkeys acquisitionDate
+        System.out.println("What is the monkey's acquisition date?"); 
+        //next line of input is stored in the acquisitionDate variable
         String acquisitionDate = scanner.nextLine();
-        newmonkey.setAcquisitionDate(acquisitionDate); //sets monkeys acquisition date
-
-        System.out.println("What is the monkey's acquisition country?"); //prompts user for input
+        //sets the acquisitionDate for our monkey object
+        newMonkey.setAcquisitionDate(acquisitionDate); 
+        //prompts user for the monkeys acquisitionCountry
+        System.out.println("What is the monkey's acquisition country?"); 
+        //next line of input will be stored in the acquisitionCountry variable
         String acquisitionCountry = scanner.nextLine();
-        newmonkey.setAcquisitionLocation(acquisitionCountry); // sets monkeys acquisition country
-
-        System.out.println("What is the monkey's training status?"); //prompts user for input
+        //sets the acquisitionLocation for our monkey object
+        newMonkey.setAcquisitionLocation(acquisitionCountry);
+        //prompts user for monkeys training status
+        System.out.println("What is the monkey's training status?"); 
+        //next line of input will be stored in the trainingStatus variable
         String trainingStatus = scanner.nextLine();
-        newmonkey.setTrainingStatus(trainingStatus); //sets monkeys training status
-
-        System.out.println("True or false: The monkey is reserved already."); //prompts user for input
+        //sets the trainingStatus for our monkey object
+        newMonkey.setTrainingStatus(trainingStatus); 
+        //Prompts user to enter true or false if monkey is reserved 
+        System.out.println("True or false: The monkey is reserved already."); 
+        //next boolean input is stored in reserved variable
         boolean reserved = scanner.nextBoolean();
-        newmonkey.setReserved(reserved); //sets monkeys reserved status
+        //sets reserved status for our monkey object
+        newMonkey.setReserved(reserved); 
+        //clears next line to accept the next input from user
         scanner.nextLine();
-
-        System.out.println("What is the monkey's in service country?"); //prompts user for input
+        //prompts user for monkeys in service country
+        System.out.println("What is the monkey's in service country?");
+        //next line of input is stored in the inServiceCountry variable
         String inServiceCountry = scanner.nextLine();
-        newmonkey.setInServiceCountry(inServiceCountry); //sets monkeys in service country
-
-        System.out.println("What is the monkey's tail length?"); //prompts user for input
+        //sets the inServiceCountry for our monkey object
+        newMonkey.setInServiceCountry(inServiceCountry); 
+        //prompts user for monkeys tail length
+        System.out.println("What is the monkey's tail length?"); 
+        //next line of input is stored in the tailLength variable
         String tailLength = scanner.nextLine();
-        newmonkey.setTailLength(tailLength); //sets monkeys tail length
-
-        System.out.println("What is the monkey's body length?"); //prompts user for input
+        //sets the tail length for our monkey object
+        newMonkey.setTailLength(tailLength); 
+        //prompts user for monkeys body length
+        System.out.println("What is the monkey's body length?"); 
+        //next line of input is stored in the bodyLength variable
         String bodyLength = scanner.nextLine();
-        newmonkey.setBodyLength(bodyLength); // sets monkeys bodylength
-
-        System.out.println("What is the monkey's height ?"); //prompts user for input
+        //sets the body length for our monkey object
+        newMonkey.setBodyLength(bodyLength);
+        //prompts user for monkeys height
+        System.out.println("What is the monkey's height?"); 
+        //next line of input is stored in the height variable
         String height = scanner.nextLine();
-        newmonkey.setHeight(height); //sets monkey height
-
-        newmonkey.setAnimalType("monkey"); //sets animal type to monkey
-
-        // adds our newly created "newmonkey" object to the monkey array
-        monkeyList.add(newmonkey);
-
+        //sets the height for our monkey object
+        newMonkey.setHeight(height); 
+        //sets the animal type to monkey for our monkey object, this is so we can search for monkeys in our printanimal method
+        newMonkey.setAnimalType("monkey"); 
+        // adds our newly created "newmonkey" object to the monkey arraylist
+        monkeyList.add(newMonkey);
         // adds newmonkey to our animalList for sorting in printanimal()
-        animalList.add(newmonkey);
-
-        System.out.print("A new monkey has been added to monkey list."); // lets the user know a monkey was added to the list
+        animalList.add(newMonkey);
+        //lets user know we have successfully added a new monkey to our arraylists
+        System.out.print("A new monkey has been added to monkey list."); 
+        return;
     }
 
-
+    //method to reserve an animal for use
     public static void reserveAnimal(Scanner scanner) {
-        String animalType; //local animalType variable for method
-        String country; //local country variable for method
+        //local animalType variable for method
+        String animalType; 
+        //local country variable for method
+        String country; 
 
-        System.out.println("Please enter desired animal type to search from"); //prompts user for input
+        //prompts user for what kind of animal they want to search for
+        System.out.println("Please enter desired animal type to search from"); 
+        //next input is stored in animalType variable
         animalType = scanner.next();
-
-        System.out.println("Please enter country to search from"); //prompts user for input
+        //prompts user for which country they want to search from
+        System.out.println("Please enter country to search from"); 
+        //next input is stored in the country variable
         country = scanner.next();
 
         //checks if monkey is available in given country
         if (animalType.equalsIgnoreCase("monkey")) {
+            //searching for monkey in monkeyList
             for (Monkey monkey : monkeyList) {
+                //if monkey is not reserved
                 if (!monkey.getReserved()) {
+                    //searches if there is an available monkeys in the country user has inputted
                     if (monkey.getInServiceLocation().equalsIgnoreCase(country)) {
+                        //prints available monkeys in that country
                         System.out.println(monkey);
+                        //sets reserved variable to true
                         monkey.setReserved(true);
+                        //lets user know that monkey has been reserved
                         System.out.println("Monkey successfully reserved");
                     }
                 }
+                //if there are not available monkeys in the chosen country tell user
                 else {
-                    System.out.println("No available monkeys in " + country); //if all the monkeys in monkeylist are reserved already let the user know
+                    System.out.println("No available monkeys in " + country); 
                 }
             }
-            if (monkeyList.isEmpty()){ //if there are no monkeys in monkeylist, let the user know.
+            //if our monkeyList arraylist is empty
+            if (monkeyList.isEmpty()){ 
+                //let user know there are not available monkeys in the chosen country
                 System.out.println("No available monkeys in " + country);
             }
         }
 
-
-        // checks if theres an available dog in given country
+        // loop to check if theres an available dog in given country
         if (animalType.equalsIgnoreCase("dog")) {
+            //searching for dog in dogList
             for (Dog dog : dogList) {
+                //if dogList is not empty
                 if (!dogList.isEmpty()) {
+                    //if dog is not reserved
                     if (!dog.getReserved()) {
+                        //if the dogs location matches the country user wants to search from
                         if (dog.getInServiceLocation().equalsIgnoreCase(country)) {
+                            //print available dogs
                             System.out.println(dog);
+                            //sets dog to reserved
                             dog.setReserved(true);
+                            //lets user know they have successfully reserved a dog
                             System.out.println("Dog successfully reserved");
                         }
                     }
+                    //if the dog is reserved
                     else {
-                        System.out.println("No available dogs in " + country); // if all the dogs are already reserved, let the user know
+                        // if all the dogs are already reserved, let the user know
+                        System.out.println("No available dogs in " + country); 
                     }
                 }
             }
+            //if the dogList array is empty 
             if (dogList.isEmpty()){
-                System.out.println("No available dogs in " + country); // if the doglist is empty, let user know
+                //lets user know there are not available dogs in that country
+                System.out.println("No available dogs in " + country);
             }
         }
     }
 
+    //method to print all animals user inputs
     public static void printAnimals(String userInput)
     {
-        String availableanimal = null;
-        // prints out the dogList array if user inputs 4 into the menu above
+        //Initialize availableAnimal variable
+        String availableAnimal = null;
+        //If userInput is 4
         if (userInput.equals("4")) {
+            //If dogList is not empty
             if (!dogList.isEmpty()) {
+                //Print all dogs: before printing all dogs in dogList
                 System.out.println("All dogs: ");
+                //searches through dogList
                 for (Dog dog : dogList) {
+                    //prints dog objects
                     System.out.println(dog);
                 }
             }
+            //if dogList is empty
             else {
+                //lets user know we have no dogs 
                 System.out.println("We have no dogs currently.");
                 }
         }
-        // prints out the monkeyList if user inputs 5 into the menu above
+        //if userInput is 5
         if (userInput.equals("5")) {
+            //if monkeyList is not empty
             if (!monkeyList.isEmpty()) {
+                //print All monkeys: before printing all monkeys in monkeyList
                 System.out.println("All monkeys: ");
+                //searches for monkeys in monkeyList
                 for (Monkey monkey : monkeyList) {
+                    //prints monkey objects
                     System.out.println(monkey);
                 }
             }
+            //if monkeyList is empty
             else
                 {
+                //lets user know we have no monkeys
                 System.out.println("We have no monkeys currently.");
             }
         }
-        // prints out the animalList array created if the user inputs 6, but only the ones that are not reserved and are "in service" training status
+        //if userInput equals 6
         if (userInput.equals("6")) {
+            //prints Available animals: before animals are displayed
             System.out.println("Available animals: ");
+            //searches for animals in animalList
             for (RescueAnimal animal: animalList) {
+                //if animal is not reserved and the training status is "in service"
                 if(!animal.getReserved() && animal.getTrainingStatus().equalsIgnoreCase("in service")) {
-                    availableanimal = String.valueOf(animal);
-                    System.out.println(availableanimal);
+                    availableAnimal = String.valueOf(animal);
+                    //print available animals
+                    System.out.println(availableAnimal);
                 }
             }
-            if (availableanimal==null) {
+            //if there are not available animals
+            if (availableAnimal==null) {
+                // let user know no animals are available
                 System.out.println("No available animals at this time.");
             }
         }
