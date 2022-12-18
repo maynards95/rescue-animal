@@ -33,6 +33,7 @@ public class Dog extends RescueAnimal {
         breed = dogBreed;
     }
 
+    // Overriding toString
     @Override
     public String toString() {
         return "Dog [Name: " + getName() + ", Training Status: " + getTrainingStatus() + ", Acquired from: " +getAcquisitionLocation() + ", Reserved: " + getReserved() + "]";

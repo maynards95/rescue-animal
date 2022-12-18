@@ -3,30 +3,44 @@ import java.util.Scanner;
 
 public class Driver
 {
+    //Initialize ArrayLists
     private static ArrayList<Dog> dogList = new ArrayList<>();
     private static ArrayList<Monkey> monkeyList = new ArrayList<>();
     private static ArrayList<RescueAnimal> animalList = new ArrayList<>();
 
     public static void main(String[] args) {
+        //Initialize scanner
         Scanner scanner = new Scanner(System.in);
 
-        boolean menuLoop = true;  // variable to keep menu looping
+        //keeps while loop going until we receive "false" from case q below
+        boolean menuLoop = true; 
 
         //this loop shows the user the menu and takes their input. If the input is not valid it runs through the loop again.
         while (menuLoop) {
+            //calls displayMenu method below
             displayMenu();
+            //Initialize variable to receive user input
             String userInput = scanner.next();
 
+            //switch case for our userInput variable
             switch (userInput) {
+                //if userInput is 1, call the intakeNewDog method and pass scanner
                 case "1" -> intakeNewDog(scanner);
+                //if userInput is 2, call intakeNewMonkey method and pass scanner
                 case "2" -> intakeNewMonkey(scanner);
+                //if userInput is 3, call reserveAnimal method and pass scanner
                 case "3" -> reserveAnimal(scanner);
+                //calls printAnimals and passed userInput (4,5, or 6) to determine which animals to print
                 case "4", "5", "6" -> printAnimals(userInput);
+                //if userInput is q, we exit the loop and print a message to let the user know we are done.
                 case "q" -> {
+                    //displays exit text for user
                     System.out.println("Exiting menu: Goodbye.");
-                    menuLoop = false; //this will end the menu loop
+                    //variable to end our loop
+                    menuLoop = false; 
                 }
-                default -> System.out.println("Invalid input please try again"); // validates that user inputs correct menu option
+                //default case for catching invalid input
+                default -> System.out.println("Invalid input please try again"); 
             }
         }
     }
@@ -49,29 +63,40 @@ public class Driver
 
 
     public static void intakeNewDog(Scanner scanner) {
+        //Creates a dog object to hold our user input
         Dog newdog = new Dog();
 
+        //Goes to next line to catch user input
         scanner.nextLine();
-
-        System.out.println("What is the dog's name?"); //prompts user for input
+         //prompts user for input
+        System.out.println("What is the dog's name?");
+        //next line of input will be stored in name variable
         String name = scanner.nextLine();
 
         // validates that the dog has not already been input into the system. If it has it will take user back to the menu
         for(Dog dog: dogList) {
+            //checks if the dog name the user typed is the same as an already existing dog name
             if(dog.getName().equalsIgnoreCase(name)) {
+                //if the dog name typed in is the same as already existing dog, let the user know we already have that dog
                 System.out.println("\n\nThis dog is already in our system\n\n");
-                return; //returns to menu
+                //returns to menu
+                return; 
             }
         }
-        newdog.setName(name); // sets the dog objects name
-
-        System.out.println("What is the dog's breed?"); //prompts user for input
+        //Sets the dog name for our dog object
+        newdog.setName(name); 
+        //prompts user for input
+        System.out.println("What is the dog's breed?"); 
+        //next line of input is stored in breed variable
         String breed = scanner.nextLine();
-        newdog.setBreed(breed); //sets the dog objects breed
-
-        System.out.println("What is the dog's gender?"); //prompts user for input
+        //sets the dog breed for our dog object
+        newdog.setBreed(breed); 
+        //prompts user for input
+        System.out.println("What is the dog's gender?"); 
+        //next line of input is stored in gender variable
         String gender = scanner.nextLine();
-        newdog.setGender(gender); //sets the dog objects gender
+        //sets the dog gender for our dog object
+        newdog.setGender(gender); 
 
         System.out.println("What is the dog's age?"); //prompts user for input
         String age = scanner.nextLine();
