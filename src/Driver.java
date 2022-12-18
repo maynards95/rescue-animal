@@ -83,71 +83,40 @@ public class Driver
                 return; 
             }
         }
-        //Sets the dog name for our dog object
+        
         newDog.setName(name); 
-        //prompts user for dogs breed
         System.out.println("What is the dog's breed?"); 
-        //next line of input is stored in breed variable
         String breed = scanner.nextLine();
-        //sets the dog breed for our dog object
         newDog.setBreed(breed); 
-        //prompts user for dogs gender
         System.out.println("What is the dog's gender?"); 
-        //next line of input is stored in gender variable
         String gender = scanner.nextLine();
-        //sets the dog gender for our dog object
-        newDog.setGender(gender); 
-        //prompts user for dogs age    
+        newDog.setGender(gender);   
         System.out.println("What is the dog's age?"); 
-        //next line of input is stored in the age variable
         String age = scanner.nextLine();
-        //sets the dogs age for our dog object
         newDog.setAge(age); 
-        //prompts user for dogs weight
         System.out.println("What is the dog's weight"); 
-        //next line of input is stored in the weight variable
         String weight = scanner.nextLine();
-        //sets the dogs weight for our dog object
         newDog.setWeight(weight);
-        //prompts user for acquisition date
         System.out.println("What is the dog's acquisition date?"); 
-        //next line of input is stored in the acquisitionDate variable
         String acquisitionDate = scanner.nextLine();
-        //sets the dogs acquisitionDate for our dog object
         newDog.setAcquisitionDate(acquisitionDate); 
-        //prompts user for acquisition country
         System.out.println("What is the dog's acquisition country?"); 
-        //next line of input is stored in the acquisitionCountry variable
         String acquisitionCountry = scanner.nextLine();
-        //sets the acquisitionLocation for our dog object
         newDog.setAcquisitionLocation(acquisitionCountry); 
-        //prompts user for dogs training status
         System.out.println("What is the dog's training status?"); 
-        //next line of input is stored in the trainingStatus variable
         String trainingStatus = scanner.nextLine();
-        //sets the trainingStatus for the dog object
-        newDog.setTrainingStatus(trainingStatus); 
-        //prompts user to answer true or false if the dog is reserved
+        newDog.setTrainingStatus(trainingStatus);
         System.out.println("True or false: The dog is reserved already."); 
-        //next boolean is stored in the reserved variable
         boolean reserved = scanner.nextBoolean();
-        //sets the reserved status for our dog object
         newDog.setReserved(reserved); 
         //clears next line to receive next input
         scanner.nextLine();
-        //prompts user for dogs service country
         System.out.println("What is the dog's in service country?"); 
-        //next line of input is stored in the inServiceCountry variable
         String inServiceCountry = scanner.nextLine();
-        //sets the inServiceCountry for our dog object
         newDog.setInServiceCountry(inServiceCountry);
-        //sets animaltype to dog
         newDog.setAnimalType("dog"); 
-        // adds our newly created "newdog" object to dog array
         dogList.add(newDog);
-        // adds newdog to animalList for sorting in printanimal()
         animalList.add(newDog);
-        //prints message to let user known we successfully added dog object to our arraylist
         System.out.print("A new dog has been added to dog list."); 
         return;
     }
@@ -176,9 +145,7 @@ public class Driver
         }
         //sets the name for our monkey object
         newMonkey.setName(name);
-        //prompts user for monkeys species
         System.out.println("What is the monkey's species?");
-        //next line if input will be stored in the species variable
         String species = scanner.nextLine();
 
         // if and else loop for input validation so we ensure only the species on monkey we want are inputted,
@@ -226,81 +193,44 @@ public class Driver
             return; 
             }
 
-        //prompts user for monkeys gender
         System.out.println("What is the monkey's gender?"); 
-        //next line of input is stored in the gender variable
         String gender = scanner.nextLine();
-        //sets the gender for our monkey object
         newMonkey.setGender(gender); 
-        //prompts user for monkeys age
         System.out.println("What is the monkey's age?"); 
-        //next line of input is stored in the age variable
         String age = scanner.nextLine();
-        //sets the age for our monkey object
         newMonkey.setAge(age);
-        //prompts user for monkeys weight
         System.out.println("What is the monkey's weight"); 
-        //next line of input will be stored in the weight variable
         String weight = scanner.nextLine();
-        //sets the weight for our monkey object
         newMonkey.setWeight(weight); 
-        //prompts user for monkeys acquisitionDate
         System.out.println("What is the monkey's acquisition date?"); 
-        //next line of input is stored in the acquisitionDate variable
         String acquisitionDate = scanner.nextLine();
-        //sets the acquisitionDate for our monkey object
         newMonkey.setAcquisitionDate(acquisitionDate); 
-        //prompts user for the monkeys acquisitionCountry
         System.out.println("What is the monkey's acquisition country?"); 
-        //next line of input will be stored in the acquisitionCountry variable
         String acquisitionCountry = scanner.nextLine();
-        //sets the acquisitionLocation for our monkey object
         newMonkey.setAcquisitionLocation(acquisitionCountry);
-        //prompts user for monkeys training status
         System.out.println("What is the monkey's training status?"); 
-        //next line of input will be stored in the trainingStatus variable
         String trainingStatus = scanner.nextLine();
-        //sets the trainingStatus for our monkey object
         newMonkey.setTrainingStatus(trainingStatus); 
-        //Prompts user to enter true or false if monkey is reserved 
         System.out.println("True or false: The monkey is reserved already."); 
-        //next boolean input is stored in reserved variable
         boolean reserved = scanner.nextBoolean();
-        //sets reserved status for our monkey object
         newMonkey.setReserved(reserved); 
         //clears next line to accept the next input from user
         scanner.nextLine();
-        //prompts user for monkeys in service country
         System.out.println("What is the monkey's in service country?");
-        //next line of input is stored in the inServiceCountry variable
         String inServiceCountry = scanner.nextLine();
-        //sets the inServiceCountry for our monkey object
         newMonkey.setInServiceCountry(inServiceCountry); 
-        //prompts user for monkeys tail length
         System.out.println("What is the monkey's tail length?"); 
-        //next line of input is stored in the tailLength variable
         String tailLength = scanner.nextLine();
-        //sets the tail length for our monkey object
         newMonkey.setTailLength(tailLength); 
-        //prompts user for monkeys body length
         System.out.println("What is the monkey's body length?"); 
-        //next line of input is stored in the bodyLength variable
         String bodyLength = scanner.nextLine();
-        //sets the body length for our monkey object
         newMonkey.setBodyLength(bodyLength);
-        //prompts user for monkeys height
         System.out.println("What is the monkey's height?"); 
-        //next line of input is stored in the height variable
         String height = scanner.nextLine();
-        //sets the height for our monkey object
         newMonkey.setHeight(height); 
-        //sets the animal type to monkey for our monkey object, this is so we can search for monkeys in our printanimal method
         newMonkey.setAnimalType("monkey"); 
-        // adds our newly created "newmonkey" object to the monkey arraylist
         monkeyList.add(newMonkey);
-        // adds newmonkey to our animalList for sorting in printanimal()
         animalList.add(newMonkey);
-        //lets user know we have successfully added a new monkey to our arraylists
         System.out.print("A new monkey has been added to monkey list."); 
         return;
     }
